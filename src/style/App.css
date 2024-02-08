@@ -1,0 +1,49 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+.backgroundColor {
+  background-color: rgb(14, 34, 61);
+  background-image: linear-gradient(to right, #7fffd412, rgb(15, 35, 61)5%, rgb(15, 35, 61)95%,#7fffd412);
+}
+
+.sections {
+  display: grid;
+  align-items: end;
+}
+
+.content {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10%;
+  display: flex;
+  width: calc(100% - 2rem);
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    height: 60vh;
+    max-width: 1300px;
+    margin-right: auto;
+    margin-top: 100px;
+    display: inline-flex;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    width: calc(100% - 2rem);
+  }
+
+  .logoSection {
+    display: none;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 0vw; /* THIS WILL RESET THE DEFAULT SCORLLBAR STYLING */
+}

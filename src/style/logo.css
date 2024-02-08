@@ -1,0 +1,16 @@
+/* Logo.css */
+.logoSection {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    text-align: left;
+    margin-top: auto;
+    justify-content: start;
+  }
+  
+  .contactLogo {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    margin-bottom: 15px; /* Adjust the spacing between logos as needed */
+  }
+  

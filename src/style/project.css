@@ -1,0 +1,105 @@
+.libContent {
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+    width: calc(100% - 2rem);
+}
+
+.textLib {
+    font-size: 45px;
+    text-align: left;
+    margin-right: auto;
+    opacity: 1;
+    color: rgba(204, 214, 246, 255);
+    transition: opacity ease-in-out;
+    transition-duration: 5s;
+}
+
+.cards {
+    margin: auto;
+    display: flex;
+    width: auto;
+}
+
+.card {
+    transition: box-shadow 0.5s ease; /* Ajustez la durée et le timing à votre goût */
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    background-color: rgb(10 26 47);
+
+}
+
+#card1 {
+    box-shadow: 
+    rgb(91 75 210 / 40%) -5px 5px, 
+    rgb(75 140 210 / 30%) -10px 10px, 
+    rgb(75 203 210 / 20%) -15px 15px, 
+    rgb(75 203 210 / 10%) -20px 20px, 
+    rgb(75 210 186 / 5%) -25px 25px;
+}
+#card2 {
+    box-shadow: 
+    rgb(91 75 210 / 40%) 0px 5px, 
+    rgb(75 140 210 / 30%) 0px 10px, 
+    rgb(75 203 210 / 20%) 0px 15px, 
+    rgb(75 203 210 / 10%) 0px 20px, 
+    rgb(75 210 186 / 5%) 0px 25px; 
+}
+#card3 {
+    box-shadow: 
+    rgb(91 75 210 / 40%) 5px 5px, 
+    rgb(75 140 210 / 30%) 10px 10px, 
+    rgb(75 203 210 / 20%) 15px 15px, 
+    rgb(75 203 210 / 10%) 20px 20px, 
+    rgb(75 210 186 / 5%) 25px 25px;
+}
+
+@media screen and (max-width: 1080px) {
+    .textLib {
+        text-align-last: center;
+        font-size: 35px;
+        text-align: left;
+        margin-right: auto;
+        opacity: 1;
+        color: rgba(204, 214, 246, 255);
+        transition: opacity ease-in-out;
+        transition-duration: 5s;
+    }
+    .cards {
+        margin: auto;
+        display: grid;
+        width: auto;
+    }
+    
+    .card {
+        width: 80%!important;
+        height: 400px;
+        margin: auto;
+        margin-top: 50px;
+        border-radius: 10px;
+        background-color: rgb(10 26 47);
+    
+    } 
+
+    #card2 {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(31, 31, 31, 0.05) 0px 0px 0px 1px inset;    }
+    #card1 {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(31, 31, 31, 0.05) 0px 0px 0px 1px inset;    }
+    #card3 {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(31, 31, 31, 0.05) 0px 0px 0px 1px inset;    }
+}
+
+@media screen and (max-width: 405px) {
+    .textLib {
+        text-align-last: center;
+        font-size: 30px;
+        text-align: left;
+        margin-right: auto;
+        opacity: 1;
+        color: rgba(204, 214, 246, 255);
+        transition: opacity ease-in-out;
+        transition-duration: 5s;
+    }
+}

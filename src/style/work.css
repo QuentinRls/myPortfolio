@@ -1,0 +1,366 @@
+.workList {
+    position: relative;
+    z-index: 3;
+    width: 150px;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.workContent {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 95vw;
+}
+
+.reactAnim {
+    margin-top: -50px;
+    height: 300px;
+    width: 300px;
+}
+
+.selected {
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 150px;
+    height: 42px;
+    padding: 0px 20px 2px;
+    background-color: transparent;
+    color: aquamarine;
+    border-left-width: 2px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left: 2px solid #233554;
+}
+
+.unselected {
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 150px;
+    height: 42px;
+    padding: 0px 20px 2px;
+    background-color: transparent;
+    color: rgba(125, 135, 163, 255);
+    border-left-width: 2px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left: 2px solid rgba(125, 135, 163, 255);
+}
+
+.cursorList {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 2px;
+    height: 42px;
+    border-radius: 4px;
+    background: aquamarine;
+    transform: translateY(calc(var(--selectedButton, 0) * 42px));
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+}
+
+.workListContent {
+    justify-content: space-around;
+    display: flex;
+}
+
+.MainWorkInfoContent {
+    max-width: 500px;
+    width: 500px;
+    margin: 0px;
+    color: rgba(125, 135, 163, 255);
+}
+
+.WorkInfoContentTitle {
+    color: rgba(204, 214, 246, 255);
+    margin-top: 3px;
+}
+
+.experience-list li::before {
+    content: '>';
+    color: aquamarine;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.textLinkUnderline {
+    position: relative;
+    color: aquamarine;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.textLinkUnderline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: aquamarine;
+    transition: transform 0.3s ease;
+    transform: scaleX(0.0001);
+    transform-origin: bottom left;
+}
+
+.textLinkUnderline:hover::after {
+    transform: scaleX(1);
+}
+
+.experience-list li {
+    margin-bottom: 1em;
+    position: relative;
+    list-style: none;
+}
+
+.experience-list li::before {
+    content: '>';
+    color: aquamarine;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.titleWork {
+    font-size: 45px;
+    text-align: left;
+    margin-right: auto;
+    opacity: 1;
+    color: rgba(204, 214, 246, 255);
+    transition: opacity ease-in-out;
+    transition-duration: 5s;
+}
+
+
+.cube {
+    position: relative;
+    width: 500px; /* Largeur du cube */
+    height: 300px; /* Hauteur du cube */
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform-origin: center center; /* Centre le point de rotation */
+}
+
+.cube__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Cache la face arrière lors de la rotation */
+    align-items: center;
+    justify-content: center;
+    border: 0px solid #233554; /* Style de bordure pour chaque face */
+}
+
+@media screen and (max-width: 1080px) {
+    .centerCursor {
+        max-width: 92vw;
+        position: relative;
+        display: flex;
+    }
+
+    .MainWorkInfoContent {
+        text-align: center;
+        max-width: 500px;
+        margin: 0px;
+        color: rgba(125, 135, 163, 255);
+    }
+
+    .titleWork {
+        text-align-last: center;
+        font-size: 35px;
+        text-align: left;
+        margin-right: auto;
+        opacity: 1;
+        color: rgba(204, 214, 246, 255);
+        transition: opacity ease-in-out;
+        transition-duration: 5s;
+    }
+
+    .workContent {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        width: 100%;
+    }
+
+    .reactAnim {
+        display: none;
+    }
+
+    .workList {
+        justify-content: center;
+        display: flex;
+        position: relative;
+        z-index: 3;
+        width: 92vw;
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+    }
+
+    .workListContent {
+        display: grid;
+        justify-items: center;
+    }
+
+    .unselected {
+        text-decoration: none;
+        text-decoration-skip-ink: auto;
+        position: relative;
+        justify-content: center;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        height: 42px;
+        width: 94px;
+        background-color: transparent;
+        color: rgba(125, 135, 163, 255);
+        padding: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-top-width: 4px solid rgba(125, 135, 163, 255);
+        border-top: 4px solid rgba(125, 135, 163, 255);
+        border-bottom-width: 0px;
+        border-left: 0px;
+    }
+
+    .selected {
+        text-decoration: none;
+        text-decoration-skip-ink: auto;
+        position: relative;
+        justify-content: center;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        height: 42px;
+        width: 94px;
+        background-color: transparent;
+        color: aquamarine;
+        padding: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-top-width: 4px solid #233554;
+        border-top: 4px solid #233554;
+        border-bottom-width: 0px;
+        border-left: 0px;
+    }
+
+    .cursorList {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        width: 94.75px;
+        height: 4px;
+        border-radius: 4px;
+        background: aquamarine;
+        transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+    }
+    .cube {
+        position: relative;
+        width: 100vw; /* Largeur du cube */
+        height: 300px; /* Hauteur du cube */
+        transform-style: preserve-3d;
+        text-align: -webkit-center;
+
+        transition: transform 1s;
+        transform-origin: center center; /* Centre le point de rotation */
+    }
+    
+}
+
+@media screen and (max-width: 405px) {
+    .cursorList {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        width: 22.997vw;
+        height: 4px;
+        border-radius: 4px;
+        background: aquamarine;
+        transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+    }
+
+    .titleWork {
+        text-align-last: center;
+        font-size: 30px;
+        text-align: left;
+        margin-right: auto;
+        opacity: 1;
+        color: rgba(204, 214, 246, 255);
+        transition: opacity ease-in-out;
+        transition-duration: 5s;
+    }
+    .cube {
+        position: relative;
+        width: 100vw; /* Largeur du cube */
+        height: 300px; /* Hauteur du cube */
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        transform-origin: center center; /* Centre le point de rotation */
+    }
+    
+    .cube__face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Cache la face arrière lors de la rotation */
+        align-items: center;
+        justify-content: center;
+        border: 0px solid #233554; /* Style de bordure pour chaque face */
+    }   
+}
+
+/* Positionnement spécifique de chaque face du cube */
+.cube__face--front {
+    transform: rotateY(0deg) translateZ(150px);
+}
+
+.cube__face--right {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.cube__face--bottom {
+    transform: rotateX(-180deg) translateZ(150px);
+}
+
+.cube__face--left {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+/* Classes pour la rotation du cube */
+.show-front {
+    transform: rotateY(0deg);
+}
+.show-right {
+    transform: rotateX(-90deg);
+}
+
+.show-bottom {
+    transform: rotateX(-180deg);
+}
+
+.show-left {
+    transform: rotateX(-270deg);
+}
