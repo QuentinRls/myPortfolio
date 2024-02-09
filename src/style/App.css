@@ -6,11 +6,11 @@ body {
   overflow-x: hidden;
 }
 
-
 .backgroundColor {
   background-color: rgb(14, 34, 61);
-  background-image: linear-gradient(to right, #7fffd412, rgb(15, 35, 61)5%, rgb(15, 35, 61)95%,#7fffd412);
+  background-image: linear-gradient(to right, #7fffd412, rgb(15, 35, 61)5%, rgb(15, 35, 61)95%, #7fffd412);
 }
+
 
 .sections {
   display: grid;
@@ -45,5 +45,6 @@ body {
 
 
 ::-webkit-scrollbar {
-  width: 0vw; /* THIS WILL RESET THE DEFAULT SCORLLBAR STYLING */
+  width: 0vw;
+  /* THIS WILL RESET THE DEFAULT SCORLLBAR STYLING */
 }
