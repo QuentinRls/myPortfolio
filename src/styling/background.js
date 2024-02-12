@@ -7,7 +7,7 @@ const Background = () => {
 
     for (let i = 0; i < 300; i++) {
       cElements.push(<div key={i} className="SphereParticles"></div>);
-    }
+    } 
 
     return cElements;
   };
