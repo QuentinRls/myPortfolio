@@ -95,7 +95,7 @@ svg {
 }
 
 .fade-in {
-    opacity: 0;
+    display: none;
     transition: opacity ease;
     transition-duration: 5s;
 }
@@ -126,7 +126,7 @@ svg {
         color: #a8b2d1;
     }
     .fade-in {
-        opacity: 0;
+        display: none;
         transition: opacity ease;
         transition-duration: 1s;
     }

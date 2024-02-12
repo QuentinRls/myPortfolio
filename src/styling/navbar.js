@@ -43,7 +43,7 @@ function Navbar() {
   }, []);
 
   return (
-<div className={`fade-in ${isVisible ? 'visible' : ''}`}>
+<div className={`fade-in-nav ${isVisible ? 'visible' : ''}`}>
   <nav className={navClassList.join(" ")}>
     <img src={logo} alt="Votre SVG" className='logoSvg'/>
     {isSmallScreen ? (

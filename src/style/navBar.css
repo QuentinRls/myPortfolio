@@ -116,7 +116,7 @@ display: none;
 }
 
 
-.fade-in {
+.fade-in-nav {
     opacity: 0;
     transition: opacity ease;
     transition-duration: 5s;

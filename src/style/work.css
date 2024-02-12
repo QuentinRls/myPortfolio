@@ -291,6 +291,13 @@
 }
 
 @media screen and (max-width: 405px) {
+    .workContent {
+        max-width: 99.9%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        width: 100%;
+    }
     .cursorList {
         position: absolute;
         top: 0px;
