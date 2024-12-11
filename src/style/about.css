@@ -51,7 +51,8 @@ ul.skills-list li::before {
 .aboutPhoto {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Préserve les proportions tout en remplissant le conteneur */
+    object-fit: cover;
+    /* Assure que l'image reste proportionnelle tout en remplissant son conteneur */
     border-radius: 10px;
     transition: all ease 0.6s;
     z-index: 1;
@@ -60,19 +61,29 @@ ul.skills-list li::before {
 .aboutPhotoCadre {
     position: absolute;
     top: 20px;
+    /* Aligne le cadre avec le haut de l'image */
     left: 20px;
-    width: 100%;
-    height: 100%;
-    transition: all ease 0.6s;
+    /* Aligne le cadre avec le côté gauche de l'image */
+    width: 98%;
+    /* Adopte la largeur de l'image */
+    height: 98%;
+    /* Adopte la hauteur de l'image */
     border: solid 3px aquamarine;
     border-radius: 10px;
+    /* Même arrondi que l'image */
     z-index: 0;
+    pointer-events: none;
+    /* Empêche toute interaction avec le cadre */
 }
 
+
 .aboutPhotoContainer {
-    width: 80%; /* Ajuste la taille à 80% de la largeur de l'écran */
-    max-width: 300px; /* Limite la taille maximale */
-    height: auto; /* Permet à la hauteur de s'ajuster automatiquement */
+    width: 80%;
+    /* Ajuste la taille à 80% de la largeur de l'écran */
+    max-width: 300px;
+    /* Limite la taille maximale */
+    height: auto;
+    /* Permet à la hauteur de s'ajuster automatiquement */
     display: grid;
     place-self: center;
     position: relative;
@@ -126,22 +137,23 @@ a {
     .boxSize {
         max-width: 75vw;
     }
+
     .aboutContainer {
         display: block;
         text-align: justify;
     }
-    
+
     .aboutTextList {
         text-align: center;
         display: block;
         width: 100%;
     }
-    
+
     .aboutText {
         font-size: 15px;
         line-height: 25px;
     }
-    
+
     ul.skills-list {
         justify-content: center;
         display: grid;
@@ -153,6 +165,7 @@ a {
         list-style: none;
         margin-bottom: 40px;
     }
+
     .aboutContent {
         max-width: 1100px;
         justify-content: center;
@@ -162,6 +175,7 @@ a {
         display: flex;
         width: calc(100% - 2rem);
     }
+
     .aboutPhotoContainer {
         position: relative;
         margin-left: auto;
@@ -171,6 +185,7 @@ a {
         display: grid;
         place-self: center;
     }
+
     .aboutPhoto {
         width: 100%;
         height: 100%;
@@ -181,7 +196,8 @@ a {
         transition: all ease 0.6s;
         border-radius: 10px;
     }
-    .aboutPhoto:hover + .aboutPhotoCadre {
+
+    .aboutPhoto:hover+.aboutPhotoCadre {
         position: absolute;
         top: 20px;
         left: 20px;
@@ -192,21 +208,20 @@ a {
         border-radius: 10px;
         z-index: 0;
         transform: translate(-17px, -19px)
+    }
 }
 
-}
-
-.aboutPhoto:hover + .aboutPhotoCadre {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 100%;
-        height: 100%;
-        transition: all ease 0.6s;
-        border: solid 3px aquamarine;
-        border-radius: 10px;
-        z-index: 0;
-        transform: translate(-17px, -6px)
+.aboutPhoto:hover+.aboutPhotoCadre {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    transition: all ease 0.6s;
+    border: solid 3px aquamarine;
+    border-radius: 10px;
+    z-index: 0;
+    transform: translate(-17px, -6px)
 }
 
 @media screen and (max-width: 500px) {
@@ -218,20 +233,30 @@ a {
 
     .aboutPhoto {
         width: 100%;
-        height: auto; /* Garde l'image proportionnelle */
+        height: auto;
+        /* Garde l'image proportionnelle */
         object-fit: contain;
+    }
+
+    .aboutPhotoCadre {
+        top: 10px;
+        left: 10px;
+        width: 78%;
+        height: 98%;
     }
 }
 
-@media screen and (max-width: 300px) {
-.aboutPhoto {
-    display: none;
-    }
-    .aboutPhotoCadre{
+
+@media screen and (max-width: 426px) {
+    .aboutPhoto {
         display: none;
     }
+
+    .aboutPhotoCadre {
+        display: none;
+    }
+
     .aboutPhotoContainer {
         display: none;
     }
-    }
-    
+}

@@ -29,7 +29,7 @@ function Form({ onResult, onClear }) {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3000/upload-cv", {
+      const response = await fetch("https://mywebsiteserver-s92a.onrender.com/upload-cv", {
         method: "POST",
         body: formData,
       });

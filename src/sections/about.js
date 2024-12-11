@@ -13,9 +13,8 @@ const About = () => {
         <div className='aboutContainer'>
           <AboutTextSection />
           <div className='aboutPhotoContainer'>
-            <img src={picture} className='aboutPhoto' alt={picture.alt} />
-            <div className='aboutPhotoCadre'>
-            </div>
+            <img src={picture} className='aboutPhoto' alt="About" />
+            <div className='aboutPhotoCadre'></div>
           </div>
         </div>
       </div>

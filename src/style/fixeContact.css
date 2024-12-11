@@ -49,6 +49,14 @@
     ;
 }
 
+.no-pointer-events {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    display: none;
+  }
+  
+
 .imageConact {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -98,7 +106,7 @@ svg {
     display: block;
     opacity: 0;
     transition: opacity ease;
-    transition-duration: 5s;
+    transition-duration: 3s;
 }
 
 

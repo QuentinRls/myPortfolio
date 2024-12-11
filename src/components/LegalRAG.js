@@ -17,7 +17,7 @@ function LegalRAG({onClear}) {
     setLoading(true); // Démarrer le chargement
 
     try {
-      const response = await fetch("http://localhost:3000/legal-query", {
+      const response = await fetch("https://mywebsiteserver-s92a.onrender.com/legal-query", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

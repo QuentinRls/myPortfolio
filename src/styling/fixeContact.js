@@ -20,7 +20,11 @@ const FixeContact = ({ noShow }) => {
   }, [noShow]);
 
   return (
-    <div className={`fade-in ${isVisible ? 'visible' : 'invisible'}`}>
+    <div
+      className={`fade-in ${isVisible ? 'visible' : 'invisible'} ${
+        noShow ? 'no-pointer-events' : ''
+      }`}
+    >
       <div orientation="left" className="leftStack">
         <ListContact />
       </div>
