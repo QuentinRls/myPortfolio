@@ -1,6 +1,5 @@
 // Home.js
 import React, { useState, useEffect } from 'react';
-import Background from '../styling/background';
 import ParticleEffectButton from 'react-particle-effect-button';
 import ReactTyped from "react-typed";
 import '../style/home.css';
@@ -35,7 +34,7 @@ const SectionsButton = () => {
   return (
     <div className='buttonGroup'>
       <EffectButton section="about" timing={3000} text='About' direction={"left"} />
-      <EffectButton section="contact" timing={2000} text='Experiences' direction={"left"} />
+      <EffectButton section="Work" timing={2000} text='Experiences' direction={"left"} />
       <EffectButton section="project" timing={1000} text='Project' direction={"left"} />
     </div>
   )
@@ -93,7 +92,6 @@ const Home = () => {
     <section className='contentHome'>
       <div className='regroup'>
         <PresentationText />
-        <Background />
       </div>
       <SectionsButton />
     </section>

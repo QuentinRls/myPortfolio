@@ -1,0 +1,102 @@
+$quantity: 150;
+
+.firefly {
+    position:relative;
+    z-index: 12;
+    width: 0.1vw;
+    height: 0.1vw;
+    animation: ease 200s alternate infinite;
+    pointer-events: none;
+  
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transform-origin: -10vw;
+    }
+  
+    &::before {
+      background: rgb(255, 255, 255);
+      opacity: 0.4;
+      animation: drift ease alternate infinite;
+    } 
+  
+    &::after {
+      background: white;
+      opacity: 0;
+      box-shadow: 0 0 0vw 0vw rgb(255, 255, 255);
+      animation: drift ease alternate infinite, flash ease infinite;
+    }
+  }
+
+  .animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Empêche les lucioles de dépasser */
+    z-index: -1; /* Place le fond derrière le contenu principal */
+  }
+  @media (max-width: 600px) {
+    .firefly {
+display: none;
+    }
+  
+    .firefly::after {
+      box-shadow: 0 0 1px 0.1px rgb(255, 255, 255);
+    }
+  }
+    
+// Randomize Fireflies Motion
+@for $i from 1 through $quantity {
+  $steps: random(12) + 16;
+  $rotationSpeed: random(100) + 8s;
+
+  .firefly:nth-child(#{$i}) {
+    animation-name: move#{$i};
+
+    &::before {
+      animation-duration: #{$rotationSpeed};
+    }
+
+    &::after {
+      animation-duration: #{$rotationSpeed}, random(6000) + 5000ms;
+      animation-delay: 0ms, random(8000) + 500ms;
+    }
+  }
+
+  @keyframes move#{$i} {
+    @for $step from 0 through $steps {
+      #{$step * (100 / $steps)}% {
+        transform: translateX(random(100) - 50vw) translateY(random(100) - 50vh)
+          scale(random(75) / 100 + 0.25);
+      }
+    }
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flash {
+  0%,
+  30%,
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0vw 0vw aquamarine;
+  }
+  5% {
+    opacity: 1;
+    box-shadow: 0 0 2vw 0.4vw aquamarine;
+  }
+}

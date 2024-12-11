@@ -6,6 +6,7 @@ $base-hue: 180; // change for diff colors (180 is nice)
 
 html, body {
   height: 100%;
+  overflow-y: hidden;
 }
 
 body {

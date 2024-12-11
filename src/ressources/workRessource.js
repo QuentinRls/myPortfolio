@@ -68,11 +68,11 @@ export const LottieAnimation = ({ animationData }) => {
 
     const handleEnterFrame = () => {
       if (animationInstance.current.playDirection === 1) {
-        if (animationInstance.current.currentFrame >= animationInstance.current.totalFrames - 42) {
+        if (animationInstance.current.currentFrame >= animationInstance.current.totalFrames - 32) {
           animationInstance.current.setDirection(-1);
         }
       } else {
-        if (animationInstance.current.currentFrame <= 45) {
+        if (animationInstance.current.currentFrame <= 53) {
           animationInstance.current.setDirection(1);
         }
       }

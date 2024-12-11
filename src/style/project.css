@@ -1,3 +1,5 @@
+/* Complete updated project.css to handle all states and responsiveness */
+
 .libContent {
     max-width: 1100px;
     margin-right: auto;
@@ -19,88 +21,127 @@
 .cards {
     margin: auto;
     display: flex;
-    width: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .card {
-    transition: box-shadow 0.5s ease; /* Ajustez la durée et le timing à votre goût */
+    transition: all 0.5s ease-in-out; /* Transition fluide pour toutes les propriétés */
     width: 300px;
     height: 400px;
     border-radius: 10px;
     margin: auto;
     background-color: rgb(10 26 47);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1; /* Par défaut, complètement visible */
+    transform: scale(1); /* Par défaut, échelle normale */
+  }
+  
+  .card.expanded {
+    transition: all 0.5s ease-in-out; /* Transition fluide pour toutes les propriétés */
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    z-index: 10;
+    border-radius: 1;
+    padding: 20px;
+    opacity: 1; /* Complètement visible */
+    transform: scale(1); /* Échelle normale */
+  }
+  
+  .card.hidden {
+    opacity: 0; /* Rendre la carte invisible */
+    transform: scale(0.9); /* Réduire légèrement la taille pour un effet fluide */
+    pointer-events: none; /* Désactiver les interactions */
+    width: 0;
+    height: 0;
+  }
+  
+  /* Ajout d'une transition fluide pour masquer les cartes */
+  .card:not(.expanded) {
+    transition: all 0.5s ease-in-out; /* Applique la même transition que les cartes étendues */
+  }
+  
 
+.card-intro {
+    padding: 10px;
+    text-align: center;
+    color: rgba(204, 214, 246, 255);
 }
 
-#card1 {
-    box-shadow: 
-    rgb(91 75 210 / 40%) -5px 5px, 
-    rgb(75 140 210 / 30%) -10px 10px, 
-    rgb(75 203 210 / 20%) -15px 15px, 
-    rgb(75 203 210 / 10%) -20px 20px, 
-    rgb(75 210 186 / 5%) -25px 25px;
+.card-intro h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
-#card2 {
-    box-shadow: 
-    rgb(91 75 210 / 40%) 0px 5px, 
-    rgb(75 140 210 / 30%) 0px 10px, 
-    rgb(75 203 210 / 20%) 0px 15px, 
-    rgb(75 203 210 / 10%) 0px 20px, 
-    rgb(75 210 186 / 5%) 0px 25px; 
+
+.card-intro p {
+    font-size: 16px;
+    margin-bottom: 20px;
 }
-#card3 {
-    box-shadow: 
-    rgb(91 75 210 / 40%) 5px 5px, 
-    rgb(75 140 210 / 30%) 10px 10px, 
-    rgb(75 203 210 / 20%) 15px 15px, 
-    rgb(75 203 210 / 10%) 20px 20px, 
-    rgb(75 210 186 / 5%) 25px 25px;
+
+.card-intro button {
+    background-color: #7fffd49e;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
 }
+
+.card-intro button:hover {
+    background-color: rgb(75 210 186);
+    transform: scale(1.05);
+}
+
+.goBack-btn {
+    background-color: #7fffd49e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.goBack-btn:hover {
+    background-color: rgb(75 210 186);
+    transform: scale(1.05);
+}
+
+/* Media queries for responsiveness */
 
 @media screen and (max-width: 1080px) {
     .textLib {
-        text-align-last: center;
+        text-align: center;
         font-size: 35px;
-        text-align: left;
-        margin-right: auto;
-        opacity: 1;
-        color: rgba(204, 214, 246, 255);
-        transition: opacity ease-in-out;
-        transition-duration: 5s;
     }
-    .cards {
-        margin: auto;
-        display: grid;
-        width: auto;
-    }
-    
-    .card {
-        width: 80%!important;
-        height: 400px;
-        margin: auto;
-        margin-top: 50px;
-        border-radius: 10px;
-        background-color: rgb(10 26 47);
-    
-    } 
 
-    #card2 {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(31, 31, 31, 0.05) 0px 0px 0px 1px inset;    }
-    #card1 {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(31, 31, 31, 0.05) 0px 0px 0px 1px inset;    }
-    #card3 {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(31, 31, 31, 0.05) 0px 0px 0px 1px inset;    }
+    .cards {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        width: 90%;
+        height: 400px;
+    }
 }
 
-@media screen and (max-width: 405px) {
+@media screen and (max-width: 600px) {
     .textLib {
-        text-align-last: center;
         font-size: 30px;
-        text-align: left;
-        margin-right: auto;
-        opacity: 1;
-        color: rgba(204, 214, 246, 255);
-        transition: opacity ease-in-out;
-        transition-duration: 5s;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
     }
 }

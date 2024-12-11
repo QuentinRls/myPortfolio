@@ -1,0 +1,89 @@
+.form-container {
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.legal-bold {
+  font-weight: bold; /* Met le texte en gras */
+  text-decoration: underline; /* Ajoute un soulignement */
+}
+
+
+h1 {
+  justify-self: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: rgba(204, 214, 246, 255);
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+  border-color: #7fffd49e;
+  outline: none;
+}
+
+.analyze-btn {
+  background-color: #7fffd49e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-label {
+  align-self: center;
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: rgba(125, 135, 163, 255);
+  font-weight: bold;
+  /* Uniformité du style */
+}
+
+
+.analyze-btn:disabled {
+  background-color: #cccccc;
+  /* Couleur grise pour l'état désactivé */
+  cursor: wait;
+  color: #666666;
+}
+
+.analyze-btn:hover {
+  background-color: rgb(75 210 186);
+  transform: scale(1.05);
+}
+
+.legal-rag-result h2 {
+  font-size: 20px;
+  color: #7fffd49e;
+  margin-top: 20px;
+}
+
+.legal-rag-result p {
+  font-size: 16px;
+  color: rgb(204, 214, 246, 255);
+  line-height: 1.5;
+  margin: 5px 0;
+}
