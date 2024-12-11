@@ -95,10 +95,12 @@ svg {
 }
 
 .fade-in {
-    display: none;
+    display: block;
+    opacity: 0;
     transition: opacity ease;
     transition-duration: 5s;
 }
+
 
 .visible {
     opacity: 1;
@@ -126,10 +128,12 @@ svg {
         color: #a8b2d1;
     }
     .fade-in {
-        display: none;
+        display: block;
+        opacity: 0;
         transition: opacity ease;
-        transition-duration: 1s;
+        transition-duration: 5s;
     }
+    
     
     .visible {
         transition: 0.8s ease-in-out;
