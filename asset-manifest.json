@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Quentin-Riols-Portfolio/static/css/main.c97bd0ba.css",
+    "main.css": "/Quentin-Riols-Portfolio/static/css/main.728796fb.css",
     "main.js": "/Quentin-Riols-Portfolio/static/js/main.b4847511.js",
     "static/css/180.450844f9.chunk.css": "/Quentin-Riols-Portfolio/static/css/180.450844f9.chunk.css",
     "static/js/180.74369440.chunk.js": "/Quentin-Riols-Portfolio/static/js/180.74369440.chunk.js",
@@ -17,7 +17,7 @@
     "static/media/logo.svg": "/Quentin-Riols-Portfolio/static/media/logo.e10297fc88d6ea34b1f1f9eae38e0892.svg",
     "static/media/aboutPicture.png": "/Quentin-Riols-Portfolio/static/media/aboutPicture.898884c602c24561a23b.png",
     "index.html": "/Quentin-Riols-Portfolio/index.html",
-    "main.c97bd0ba.css.map": "/Quentin-Riols-Portfolio/static/css/main.c97bd0ba.css.map",
+    "main.728796fb.css.map": "/Quentin-Riols-Portfolio/static/css/main.728796fb.css.map",
     "main.b4847511.js.map": "/Quentin-Riols-Portfolio/static/js/main.b4847511.js.map",
     "180.450844f9.chunk.css.map": "/Quentin-Riols-Portfolio/static/css/180.450844f9.chunk.css.map",
     "180.74369440.chunk.js.map": "/Quentin-Riols-Portfolio/static/js/180.74369440.chunk.js.map",
@@ -33,7 +33,7 @@
     "625.1314132d.chunk.js.map": "/Quentin-Riols-Portfolio/static/js/625.1314132d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c97bd0ba.css",
+    "static/css/main.728796fb.css",
     "static/js/main.b4847511.js"
   ]
 }
