@@ -1,46 +1,61 @@
 import React, { useEffect, useState } from 'react';
 import './fireflies.scss'; // Importer le fichier SCSS
 
-
 const Fireflies = () => {
     const [fireflies, setFireflies] = useState([]);
-  
+
     const generateFireflies = () => {
-      const quantity = 40;
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-    
-      const newFireflies = [];
-      for (let i = 0; i < quantity; i++) {
-        newFireflies.push({
-          id: i,
-          left: Math.random() * viewportWidth + 'px', // Assure que les lucioles restent dans la largeur de l'écran
-          top: Math.random() * viewportHeight + 'px', // Assure qu'elles restent dans la hauteur
-        });
-      }
-      setFireflies(newFireflies);
-    };
+      setTimeout(() => {
+          const viewportWidth = document.documentElement.clientWidth;
+          const viewportHeight = document.documentElement.clientHeight;
+          const fireflySize = 10; // Taille approximative de la luciole
   
-    useEffect(() => {
-      generateFireflies();
-      window.addEventListener('resize', generateFireflies); // Recalcule les lucioles lors du redimensionnement
-      return () => window.removeEventListener('resize', generateFireflies);
-    }, []);
+          const newFireflies = [];
+          const quantity = 40;
   
-    return (
-      <>
-        {fireflies.map((firefly) => (
-          <div
-            key={firefly.id}
-            className="firefly"
-            style={{
-              left: firefly.left,
-              top: firefly.top,
-            }}
-          ></div>
-        ))}
-      </>
-    );
+          for (let i = 0; i < quantity; i++) {
+              let left, top;
+  
+              do {
+                  left = Math.random() * (viewportHeight - fireflySize);
+                  top = Math.random() * (viewportWidth - fireflySize);
+              } while (
+                  left < 0 || left + fireflySize > viewportWidth || 
+                  top < 0 || top + fireflySize > viewportHeight
+              );
+  
+              newFireflies.push({
+                  id: i,
+                  left: `${left}px`,
+                  top: `${top}px`,
+              });
+          }
+  
+          setFireflies(newFireflies);
+      }, 100); // Donne un délai pour permettre le recalcul des dimensions
   };
   
-  export default Fireflies;
+
+    useEffect(() => {
+        generateFireflies();
+        window.addEventListener('resize', generateFireflies); // Recalcule les lucioles lors du redimensionnement
+        return () => window.removeEventListener('resize', generateFireflies);
+    }, []);
+
+    return (
+      <div id="firefly-container">
+            {fireflies.map((firefly) => (
+                <div
+                    key={firefly.id}
+                    className="firefly"
+                    style={{
+                        left: firefly.left,
+                        top: firefly.top,
+                    }}
+                ></div>
+            ))}
+        </div>
+    );
+};
+
+export default Fireflies;

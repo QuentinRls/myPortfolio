@@ -1,16 +1,14 @@
-$total: 300; // total particles
-$orb-size: 100px;
-$particle-size: 2px;
-$time: 14s; 
-$base-hue: 180; // change for diff colors (180 is nice)
+ // change for diff colors (180 is nice)
 
 html, body {
   height: 100%;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 body {
   background: black;
+  overflow-x: hidden;
+
 //   overflow: hidden; // no scrollbars.. 
 }
 

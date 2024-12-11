@@ -3,7 +3,8 @@ import './style/App.css';
 import Navbar from './styling/navbar';
 import FixeContact from './styling/fixeContact';
 import useScrollListener from './utils/useScrollListener';
-import Fireflies from './utils/fireflies'; // Import du composant Fireflies
+import Fireflies from './utils/fireflies';
+import { HashRouter as Router } from 'react-router-dom'; // Import HashRouter
 
 // Lazy load sections
 const Home = lazy(() => import('./sections/home'));
@@ -14,7 +15,7 @@ const Contact = lazy(() => import('./sections/contact'));
 
 function App() {
   const [isFixedContactVisible, setFixedContactVisible] = useState(true);
-  const scrollData = useScrollListener(); // Utiliser scrollData pour suivre le scroll
+  const scrollData = useScrollListener();
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
@@ -23,23 +24,25 @@ function App() {
     } else {
       setFixedContactVisible(true);
     }
-  }, [scrollData.y]); // Dépendance sur scrollData.y
+  }, [scrollData.y]);
 
   return (
-    <div className="backgroundColor" id="canvas-club">
-      <Fireflies />
-      <Navbar />
-      {isFixedContactVisible ? <FixeContact noShow={false} /> : <FixeContact noShow={true} />}
-      <div className="sections">
-        <Suspense fallback={<div>Loading...</div>}>
-          <Home />
-          <About />
-          <Work />
-          <Project />
-          <Contact />
-        </Suspense>
+    <Router>
+      <div className="backgroundColor" id="canvas-club">
+        <Fireflies />
+        <Navbar />
+        {isFixedContactVisible ? <FixeContact noShow={false} /> : <FixeContact noShow={true} />}
+        <div className="sections">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Home />
+            <About />
+            <Work />
+            <Project />
+            <Contact />
+          </Suspense>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

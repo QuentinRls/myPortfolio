@@ -1,7 +1,24 @@
 $quantity: 150;
 
+#firefly-container {
+  position: absolute; /* Conteneur pour lucioles */
+  width: 100vw; /* Occupe tout l'écran */
+  height: 100vh;
+  overflow: hidden; /* Empêche les débordements */
+}
+
 .firefly {
-    position:relative;
+  position: absole;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  box-shadow: 0 0 10px aquamarine;
+}
+
+
+.firefly {
+    position:absolute;
     z-index: 12;
     width: 0.1vw;
     height: 0.1vw;

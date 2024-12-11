@@ -83,12 +83,11 @@ function Form({ onResult, onClear }) {
             <input
               id="fileInput"
               type="file"
-              accept=".pdf,.docx"
+              accept=".pdf,.docx" 
               onChange={handleFileChange}
               required
             />
           </div>
-
           <div className="job-box">
             <label htmlFor="jobPosition" className="form-label">
               Poste recherché (optionnel) :

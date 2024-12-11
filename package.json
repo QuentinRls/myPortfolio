@@ -1,5 +1,6 @@
 {
   "name": "mywebsite",
+  "homepage": "https://quentinrls.github.io/mywebsite/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,6 +20,7 @@
     "react-particle-effect-button": "^1.0.1",
     "react-particles": "^2.12.2",
     "react-particles-js": "^3.6.0",
+    "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "react-typed": "^1.2.0",
@@ -31,7 +33,9 @@
     "start": "cross-env PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +58,7 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
+    "gh-pages": "^6.2.0",
     "node-sass": "^9.0.0",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
