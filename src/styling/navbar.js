@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useScrollListener from "./scrolling";
 import '../style/navBar.css';
-import logo from "../image/logo.svg"
-
-
+import logo from "../image/logo.svg";
 function Navbar() {
   const [navClassList, setNavClassList] = useState([]);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 800);
@@ -33,36 +31,57 @@ function Navbar() {
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY, isSmallScreen]);
 
-
   useEffect(() => {
-      const timeoutId = setTimeout(() => {
-          setIsVisible(true);
-      }, 1000); // 1000 milliseconds (1 second) delay
+    const timeoutId = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
 
-      return () => clearTimeout(timeoutId);
+    return () => clearTimeout(timeoutId);
   }, []);
 
-  return (
-<div className={`fade-in-nav ${isVisible ? 'visible' : ''}`}>
-  <nav className={navClassList.join(" ")}>
-    <img src={logo} alt="Votre SVG" className='logoSvg'/>
-    {isSmallScreen ? (
-      <ul>
-        <li><button className="resumeButtonAlone">Resume</button></li>
-      </ul>
-    ) : (
-      <ul className='navList'>
-        <li><p className="navCount">I.</p> About</li>
-        <li><p className="navCount">II.</p> Experience</li>
-        <li><p className="navCount">III.</p> My Library</li>
-        <li><p className="navCount">IV.</p> Contact</li>
-        <li><button className="resumeButton">Resume</button></li>
-      </ul>
-    )}
-    <div className='nightModeContainer'></div>
-  </nav>
-</div>
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
+  return (
+    <div className={`fade-in-nav ${isVisible ? 'visible' : ''}`}>
+      <nav className={navClassList.join(" ")}>
+        <img src={logo} alt="Votre SVG" className="logoSvg" />
+        {isSmallScreen ? (
+          <ul>
+            <li>
+              <a href="/QuentinRiolsCV.pdf" download="QuentinRiolsCV.pdf" className="resumeButton">
+                Resume
+              </a>
+            </li>
+          </ul>
+        ) : (
+          <ul className="navList">
+            <li onClick={() => scrollToSection('about')}>
+              <p className='textLinkUnderlineNavBar'><p className="navCount">I.</p> About</p>
+            </li>
+            <li onClick={() => scrollToSection('Work')}>
+            <p className='textLinkUnderlineNavBar'><p className="navCount">II.</p> Experience</p>
+            </li>
+            <li onClick={() => scrollToSection('project')}>
+            <p className='textLinkUnderlineNavBar'><p className="navCount">III.</p> IA Apps</p>
+            </li>
+            <li onClick={() => scrollToSection('contact')}>
+            <p className='textLinkUnderlineNavBar'><p className="navCount">IV.</p> Contact</p>
+            </li>
+            <li>
+              <a href="/QuentinRiolsCV.pdf" download="QuentinRiolsCV.pdf" className="resumeButton">
+                Resume
+              </a>
+            </li>
+          </ul>
+        )}
+        <div className="nightModeContainer"></div>
+      </nav>
+    </div>
   );
 }
 

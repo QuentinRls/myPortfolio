@@ -35,7 +35,7 @@ const SectionsButton = () => {
     <div className='buttonGroup'>
       <EffectButton section="about" timing={3000} text='About' direction={"left"} />
       <EffectButton section="Work" timing={2000} text='Experiences' direction={"left"} />
-      <EffectButton section="project" timing={1000} text='Project' direction={"left"} />
+      <EffectButton section="project" timing={1000} text='Apps' direction={"left"} />
     </div>
   )
 }
