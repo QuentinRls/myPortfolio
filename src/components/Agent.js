@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LegalRAG.css"
+import "./LegalRAG.css";
 
 function AgentAudio() {
     const [question, setQuestion] = useState("");
@@ -32,8 +32,6 @@ function AgentAudio() {
 
             const data = await response.json();
             setAudioUrl(`https://mywebsiteserver-s92a.onrender.com/${data.filePath}`);
-            console.log("Audio URL :", audioUrl);
-
         } catch (error) {
             console.error("Erreur :", error);
             alert("Une erreur est survenue. Veuillez réessayer.");
