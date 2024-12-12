@@ -31,7 +31,7 @@ function AgentAudio() {
             }
 
             const data = await response.json();
-            setAudioUrl(`https://mywebsiteserver-s92a.onrender.com/${data.filePath}`);
+            setAudioUrl(`${data.filePath}`);
         } catch (error) {
             console.error("Erreur :", error);
             alert("Une erreur est survenue. Veuillez réessayer.");
@@ -65,6 +65,10 @@ function AgentAudio() {
                     <audio controls src={audioUrl}></audio>
                 </div>
             )}
+            <a href={audioUrl} download="response.wav" className="download-link">
+                Télécharger l'audio
+            </a>
+
         </div>
     );
 }
