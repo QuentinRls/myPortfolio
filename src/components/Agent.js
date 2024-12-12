@@ -18,7 +18,7 @@ function AgentAudio() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://localhost:3000/generate-audio", {
+            const response = await fetch("https://mywebsiteserver-s92a.onrender.com/generate-audio", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,7 +31,9 @@ function AgentAudio() {
             }
 
             const data = await response.json();
-            setAudioUrl(`http://localhost:3000/${data.filePath}`);
+            setAudioUrl(`https://mywebsiteserver-s92a.onrender.com/${data.filePath}`);
+            console.log("Audio URL :", audioUrl);
+
         } catch (error) {
             console.error("Erreur :", error);
             alert("Une erreur est survenue. Veuillez réessayer.");
