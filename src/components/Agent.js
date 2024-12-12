@@ -17,7 +17,7 @@ function Test({ onClear }) {
     setLoading(true); // Démarrer le chargement
 
     try {
-      const response = await fetch("https://mywebsiteserver-s92a.onrender.com/legal-query", {
+      const response = await fetch("https://mywebsiteserver-s92a.onrender.com/test-query", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,7 +76,7 @@ function Test({ onClear }) {
 
   return (
     <div className="form-container">
-      <h1>Assistant Juridique par IA</h1>
+      <h1>Générateur de prompt</h1>
       <form onSubmit={handleSearch} className="form">
         <label htmlFor="questionInput" className="form-label">
           Posez votre question :
