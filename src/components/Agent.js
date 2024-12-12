@@ -31,6 +31,7 @@ function AgentAudio() {
             }
 
             const data = await response.json();
+            console.log(data);
             setAudioUrl(`${data.filePath}`);
         } catch (error) {
             console.error("Erreur :", error);
