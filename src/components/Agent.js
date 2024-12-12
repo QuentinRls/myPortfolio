@@ -24,6 +24,7 @@ function GenerateImage() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ prompt: description }), // Utilisation correcte de la description comme prompt
+                mode: "no-cors",
             });
 
             if (!response.ok) {
