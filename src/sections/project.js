@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import boxShadowSetter from "../ressources/projectRessources";
 import LegalRAG from "../components/LegalRAG";
-import AgentAudio from "../components/Agent";
+import GenerateImage from "../components/Agent";
 import Form from "../components/Form";
 import "../style/project.css";
 
@@ -58,14 +58,14 @@ const Cards = () => {
     ),
     (isExpanded) => (
       isExpanded ? (
-        <AgentAudio
+        <GenerateImage
           onResult={(audio) => console.log("Audio généré :", audio)}
           onClear={handleReturn}
         />
       ) : (
         <div className="card-intro">
-          <h2>Assistant Audio</h2>
-          <p>Posez vos questions et recevez des réponses audio personnalisées.</p>
+          <h2>Créateur d'image</h2>
+          <p>Cette application vous permet de générer une image via un prompt</p>
           <button onClick={() => setExpandedCard(1)}>Utiliser</button>
         </div>
       )
