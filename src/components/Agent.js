@@ -6,16 +6,16 @@ function GenerateImage() {
     const [imageUrl, setImageUrl] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const handleGenerate = async (event) => {
+    const handleGenerateImage = async (event) => {
         event.preventDefault();
+        setImageUrl(null);
 
         if (!description) {
-            alert("Veuillez entrer une description pour l'image.");
+            alert("Veuillez entrer une description.");
             return;
         }
 
         setLoading(true);
-        setImageUrl(null);
 
         try {
             const response = await fetch("https://mywebsiteserver-s92a.onrender.com/generate-image", {
@@ -23,7 +23,7 @@ function GenerateImage() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ description }),
+                body: JSON.stringify({ prompt: description }), // Utilisation correcte de la description comme prompt
             });
 
             if (!response.ok) {
@@ -31,7 +31,7 @@ function GenerateImage() {
             }
 
             const data = await response.json();
-            setImageUrl(data.imageUrl);
+            setImageUrl(data.filePath); // Vérifiez que la clé renvoyée est bien `filePath`
         } catch (error) {
             console.error("Erreur :", error);
             alert("Une erreur est survenue. Veuillez réessayer.");
@@ -43,7 +43,7 @@ function GenerateImage() {
     return (
         <div className="form-container">
             <h1>Générateur d'Images par IA</h1>
-            <form onSubmit={handleGenerate} className="form">
+            <form onSubmit={handleGenerateImage} className="form">
                 <label htmlFor="descriptionInput" className="form-label">
                     Entrez une description pour l'image :
                 </label>
