@@ -60,17 +60,17 @@ function Navbar() {
           </ul>
         ) : (
           <ul className="navList">
-            <li onClick={() => scrollToSection('about')}>
+            <li onClick={() => scrollToSection('about')} style={{ cursor: "pointer" }}>
               <p className='textLinkUnderlineNavBar'><p className="navCount">I.</p> About</p>
             </li>
-            <li onClick={() => scrollToSection('Work')}>
-            <p className='textLinkUnderlineNavBar'><p className="navCount">II.</p> Experience</p>
+            <li onClick={() => scrollToSection('Work')} style={{ cursor: "pointer" }}>
+              <p className='textLinkUnderlineNavBar'><p className="navCount">II.</p> Experience</p>
             </li>
-            <li onClick={() => scrollToSection('project')}>
-            <p className='textLinkUnderlineNavBar'><p className="navCount">III.</p> IA Apps</p>
+            <li onClick={() => scrollToSection('project')} style={{ cursor: "pointer" }}>
+              <p className='textLinkUnderlineNavBar'><p className="navCount">III.</p> IA Apps</p>
             </li>
-            <li onClick={() => scrollToSection('contact')}>
-            <p className='textLinkUnderlineNavBar'><p className="navCount">IV.</p> Contact</p>
+            <li onClick={() => scrollToSection('contact')} style={{ cursor: "pointer" }}>
+              <p className='textLinkUnderlineNavBar'><p className="navCount">IV.</p> Contact</p>
             </li>
             <li>
               <a href="/QuentinRiolsCV.pdf" download="QuentinRiolsCV.pdf" className="resumeButton">
