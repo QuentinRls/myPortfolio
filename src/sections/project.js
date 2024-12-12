@@ -1,8 +1,7 @@
-// Corrected Project.js to clear CVResult on Return button trigger
-
 import React, { useState, useEffect } from 'react';
 import boxShadowSetter from "../ressources/projectRessources";
 import LegalRAG from "../components/LegalRAG";
+import AgentAudio from "../components/Agent";
 import Form from "../components/Form";
 import "../style/project.css";
 
@@ -32,8 +31,7 @@ const Cards = () => {
   };
 
   const handleReturn = () => {
-    if (cvResult)
-      setCVResult(null);
+    if (cvResult) setCVResult(null);
     setExpandedCard(null);
   };
 
@@ -60,22 +58,21 @@ const Cards = () => {
     ),
     (isExpanded) => (
       isExpanded ? (
-        <div>
-          <Form onResult={(data) => setCVResult(data)} onClear={handleReturn} />
-        </div>
+        <AgentAudio
+          onResult={(audio) => console.log("Audio généré :", audio)}
+          onClear={handleReturn}
+        />
       ) : (
         <div className="card-intro">
-          <h2>Analyseur de CV</h2>
-          <p>Analysez votre CV et obtenez des conseils personnalisés.</p>
+          <h2>Assistant Audio</h2>
+          <p>Posez vos questions et recevez des réponses audio personnalisées.</p>
           <button onClick={() => setExpandedCard(1)}>Utiliser</button>
         </div>
       )
     ),
     (isExpanded) => (
       isExpanded ? (
-        <div>
-          <Form onResult={(data) => setCVResult(data)} onClear={handleReturn} />
-        </div>
+        <Form onResult={(data) => setCVResult(data)} onClear={handleReturn} />
       ) : (
         <div className="card-intro">
           <h2>Analyseur de CV</h2>

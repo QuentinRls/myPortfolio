@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./LegalRAG.css";
 
-function LegalRAG({onClear}) {
+function LegalRAG({ onClear }) {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false); // État pour le chargement
@@ -72,7 +72,7 @@ function LegalRAG({onClear}) {
       );
     });
   };
-  
+
 
   return (
     <div className="form-container">
