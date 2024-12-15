@@ -91,6 +91,7 @@
     transition-duration: 5s;
   }
   .regroup {
+    min-height: 200px;
     display: grid;
     margin-top: 10%;
     height: max-content;
