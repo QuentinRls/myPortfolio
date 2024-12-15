@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmywebsite=self.webpackChunkmywebsite||[]).push([[354],{354:(e,s,t)=>{t.r(s),t.d(s,{default:()=>a});t(791);var c=t(184);const a=()=>(0,c.jsx)("section",{id:"contact",className:"content",children:(0,c.jsx)("div",{className:"presText"})})}}]);
-//# sourceMappingURL=354.ef31e442.chunk.js.map
