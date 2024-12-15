@@ -1,6 +1,6 @@
 {
-  "name": "mywebsite",
-  "homepage": "https://quentinrls.github.io/mywebsite/",
+  "name": "myPortfolio",
+  "homepage": "https://quentinrls.github.io/myPortfolio/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
