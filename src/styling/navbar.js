@@ -53,7 +53,7 @@ function Navbar() {
         {isSmallScreen ? (
           <ul>
             <li>
-              <a href="https://quentinrls.github.io/mywebsite/QuentinRiolsCV.pdf" target="_blank" rel="noreferrer" className="resumeButton">
+              <a href="https://quentinrls.github.io/myPortfolio/QuentinRiolsCV.pdf" target="_blank" rel="noreferrer" className="resumeButton">
                 Resume
               </a>
             </li>
@@ -73,7 +73,7 @@ function Navbar() {
               <p className='textLinkUnderlineNavBar'><p className="navCount">IV.</p> Contact</p>
             </li>
             <li>
-            <a href="https://quentinrls.github.io/mywebsite/QuentinRiolsCV.pdf" target="_blank" rel="noreferrer" className="resumeButton">
+            <a href="https://quentinrls.github.io/myPortfolio/QuentinRiolsCV.pdf" target="_blank" rel="noreferrer" className="resumeButton">
                 Resume
               </a>
             </li>
