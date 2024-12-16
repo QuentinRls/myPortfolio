@@ -7,45 +7,47 @@ export const workInfos = [
   {
     companyName: 'Société Générale',
     companyLink: 'https://particuliers.sg.fr/',
-    position: 'Engineer',
-    dateRange: 'May 2018 – Present',
+    position: 'Head developer',
+    dateRange: '2017 – 2018',
     tasks: [
-      'Write modern, performant, maintainable code for a diverse array of client and internal projects',
-      'Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify',
-      'Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis'
-    ]
-  },
-  {
-    companyName: 'Extia',
-    companyLink: 'https://www.extia-group.com/',
-    position: 'Consultant',
-    dateRange: 'Jan 2015 – Apr 2018',
-    tasks: [
-      'Provided strategic consulting services to optimize business processes',
-      'Collaborated with clients to deliver technology-driven solutions',
-      'Led a team of developers in agile software development practices'
+      'Development of an incident management application - J2EE',
+      'Database Management - MySQL',
+      'Creation of the interface and deployment of the application within the company'
     ]
   },
   {
     companyName: 'Event Maker',
     companyLink: 'https://www.eventmaker.com/en/',
     position: 'Developer',
-    dateRange: 'Jun 2012 – Dec 2014',
+    dateRange: 'Jun 2018 – Dec 2019',
     tasks: [
-      'Developed and maintained event management software',
-      'Designed user-friendly interfaces in collaboration with UX designers',
-      'Implemented new features and managed continuous integration and deployment'
+      'Improvement of an event management platform - ReactJS',
+      'Implementation and creation of new components for the platform - ReactJS',
+      'Development of new functionalities and improvements - ReactJS / TypeScript'
     ]
   },
   {
     companyName: 'Infopro Digital',
     companyLink: 'https://www.infopro-digital.com/',
-    position: 'Software Architect',
-    dateRange: 'Mar 2010 – May 2012',
+    position: 'Software Architect & Developer',
+    dateRange: 'Mar 2019 – May 2021',
     tasks: [
-      'Architected robust software solutions for various digital products',
-      'Conducted code reviews and mentored junior developers',
-      'Ensured scalability and performance of web applications'
+      'Front-End Implementation - JavaScript / HTML / CSS',
+      'Ensuring GDPR Compliance - JavaScript',
+      'Ensured scalability and performance of web applications',
+      'Modification of Personal Data Usage - .Net'
+    ]
+  },
+  {
+    companyName: 'Extia',
+    companyLink: 'https://www.extia-group.com/',
+    position: 'Consultant developer full stack',
+    dateRange: 'Jan 2021 – Apr 2022',
+    tasks: [
+      'Database Administration - MySQL',
+      'Back-End Management - .Net',
+      'Front-End Design and Implementation - ReactJS / SCSS',
+      'Development of REST APIs for Back-End Integration - JavaScript'
     ]
   }
 ];
