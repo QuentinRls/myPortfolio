@@ -5,25 +5,15 @@ import "../style/work.css"
 
 export const workInfos = [
   {
-    companyName: 'Société Générale',
-    companyLink: 'https://particuliers.sg.fr/',
-    position: 'Head developer',
-    dateRange: '2017 – 2018',
+    companyName: 'Extia',
+    companyLink: 'https://www.extia-group.com/',
+    position: 'Consultant developer full stack',
+    dateRange: 'Jan 2021 – Apr 2022',
     tasks: [
-      'Development of an incident management application - J2EE',
-      'Database Management - MySQL',
-      'Creation of the interface and deployment of the application within the company'
-    ]
-  },
-  {
-    companyName: 'Event Maker',
-    companyLink: 'https://www.eventmaker.com/en/',
-    position: 'Developer',
-    dateRange: 'Jun 2018 – Dec 2019',
-    tasks: [
-      'Improvement of an event management platform - ReactJS',
-      'Implementation and creation of new components for the platform - ReactJS',
-      'Development of new functionalities and improvements - ReactJS / TypeScript'
+      'Database Administration - MySQL',
+      'Back-End Management - .Net',
+      'Front-End Design and Implementation - ReactJS / SCSS',
+      'Development of REST APIs for Back-End Integration - JavaScript'
     ]
   },
   {
@@ -39,17 +29,27 @@ export const workInfos = [
     ]
   },
   {
-    companyName: 'Extia',
-    companyLink: 'https://www.extia-group.com/',
-    position: 'Consultant developer full stack',
-    dateRange: 'Jan 2021 – Apr 2022',
+    companyName: 'Event Maker',
+    companyLink: 'https://www.eventmaker.com/en/',
+    position: 'Developer',
+    dateRange: 'Jun 2018 – Dec 2019',
     tasks: [
-      'Database Administration - MySQL',
-      'Back-End Management - .Net',
-      'Front-End Design and Implementation - ReactJS / SCSS',
-      'Development of REST APIs for Back-End Integration - JavaScript'
+      'Improvement of an event management platform - ReactJS',
+      'Implementation and creation of new components for the platform - ReactJS',
+      'Development of new functionalities and improvements - ReactJS / TypeScript'
     ]
-  }
+  },
+  {
+    companyName: 'Société Générale',
+    companyLink: 'https://particuliers.sg.fr/',
+    position: 'Head developer',
+    dateRange: '2017 – 2018',
+    tasks: [
+      'Development of an incident management application - J2EE',
+      'Database Management - MySQL',
+      'Creation of the interface and deployment of the application within the company'
+    ]
+  },
 ];
 
 
