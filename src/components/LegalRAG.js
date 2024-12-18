@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./LegalRAG.css";
+import Loader from "../styling/loader";
 
 function LegalRAG({ onClear }) {
   const [question, setQuestion] = useState("");
@@ -14,7 +15,7 @@ function LegalRAG({ onClear }) {
       return;
     }
 
-    setLoading(true); // Démarrer le chargement
+    setLoading(true);
 
     try {
       const response = await fetch("https://mywebsiteserver-s92a.onrender.com/legal-query", {
@@ -44,7 +45,6 @@ function LegalRAG({ onClear }) {
   }, [onClear]);
 
   const formatAnswer = (text) => {
-    console.log(text)
     const lines = text.split("\n");
     return lines.map((line, index) => {
       const parts = line.split(/(\*\*.*?\*\*|#.*?#)/);
@@ -90,13 +90,12 @@ function LegalRAG({ onClear }) {
           required
         />
         <button type="submit" className="analyze-btn" disabled={loading}>
-          {loading ? "Recherche en cours..." : "Rechercher"}
+          {loading ? <Loader/> : "Rechercher"}
         </button>
       </form>
       {answer && (
         <div className="legal-rag-result">
           <h2>Résultat :</h2>
-          {console.log(answer)}
           {formatAnswer(answer)}
         </div>
       )}

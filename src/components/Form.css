@@ -1,4 +1,6 @@
 .form-container {
+    min-width: 200px;
+    width: 60%;
     height: 100%;
     text-align: center;
     padding: 20px;
@@ -11,8 +13,9 @@ h1 {
 }
 
 .form {
+    width: 100%;
     align-items: center;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 10px;
 }
@@ -61,7 +64,7 @@ input[type="file"] {
 
 .job-box input {
     align-self: center;
-    width: 100%;
+    width: 90%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -114,7 +117,6 @@ input[type="file"] {
     margin: 0 auto;
     background: rgb(10 26 47);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .result-container h1 {

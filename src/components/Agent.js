@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./LegalRAG.css";
+import Loader from "../styling/loader";
 
 function Test({ onClear }) {
   const [question, setQuestion] = useState("");
@@ -44,7 +45,6 @@ function Test({ onClear }) {
   }, [onClear]);
 
   const formatAnswer = (text) => {
-    console.log(text)
     const lines = text.split("\n");
     return lines.map((line, index) => {
       const parts = line.split(/(\*\*.*?\*\*|#.*?#)/);
@@ -90,7 +90,7 @@ function Test({ onClear }) {
           required
         />
         <button type="submit" className="analyze-btn" disabled={loading}>
-          {loading ? "Recherche en cours..." : "Rechercher"}
+          {loading ? <Loader/> : "Rechercher"}
         </button>
       </form>
       {answer && (

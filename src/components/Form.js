@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Form.css";
+import Loader from "../styling/loader";
 
 function Form({ onResult, onClear }) {
   const [file, setFile] = useState(null);
@@ -100,9 +101,8 @@ function Form({ onResult, onClear }) {
               onChange={(e) => setJobPosition(e.target.value)}
             />
           </div>
-
           <button type="submit" className="analyze-btn" disabled={loading}>
-            {loading ? "Analyse en cours..." : "Analysez Mon CV"}
+            {loading ? <Loader/> : "Analysez Mon CV"}
           </button>
         </form>
       )}

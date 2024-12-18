@@ -24,15 +24,14 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
 .card {
     transition: all 0.5s ease-in-out; /* Transition fluide pour toutes les propriétés */
     width: 300px;
-    height: 400px;
+    height: auto;
     border-radius: 10px;
-    margin: auto;
+    margin: 20px;
     background-color: rgb(10 26 47);
     overflow: hidden;
     display: flex;
@@ -46,10 +45,9 @@
   .card.expanded {
     transition: all 0.5s ease-in-out; /* Transition fluide pour toutes les propriétés */
     width: 100%;
-    min-height: 400px;
+    min-height: 500px;
     height: auto;
     z-index: 10;
-    border-radius: 1;
     padding: 20px;
     opacity: 1; /* Complètement visible */
     transform: scale(1); /* Échelle normale */
@@ -57,48 +55,75 @@
   
   .card.hidden {
     opacity: 0; /* Rendre la carte invisible */
-    transform: scale(0.9); /* Réduire légèrement la taille pour un effet fluide */
+    transform: scale(1); /* Réduire légèrement la taille pour un effet fluide */
     pointer-events: none; /* Désactiver les interactions */
-    width: 0;
-    height: 0;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
   }
   
   /* Ajout d'une transition fluide pour masquer les cartes */
   .card:not(.expanded) {
+    height: 500px;
     transition: all 0.5s ease-in-out; /* Applique la même transition que les cartes étendues */
   }
   
+  @keyframes fadeIn {
+    from {
+        opacity: 0; /* Départ invisible */
+    }
+    to {
+        opacity: 1; /* Fin visible */
+    }
+}
+  .card-image {
+    opacity: 0;
+    width: 100%; /* Occupe toute la largeur de la carte */
+    height: 66.66%; /* Deux tiers de la hauteur */
+    object-fit: cover; /* Assure que l'image s'adapte en conservant les proportions */
+    object-position: top; /* Affiche le haut de l'image */
+    display: block; /* Évite les espaces blancs supplémentaires */
+    animation: fadeIn 1s ease-in-out 0.25s forwards;
+  }
 
 .card-intro {
-    padding: 10px;
+    opacity: 0;
+    width: 100%;
     text-align: center;
     color: rgba(204, 214, 246, 255);
+    animation: fadeIn 1s ease-in-out 0.25s forwards;
+
 }
 
 .card-intro h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out 0.25s forwards;
 }
 
 .card-intro p {
     font-size: 16px;
     margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out 0.25s forwards;
+
 }
 
 .card-intro button {
+    width: 100%;
     background-color: #7fffd49e;
     color: rgb(255, 255, 255);
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeIn 1s ease-in-out 0.25s forwards;
+
 }
 
 .card-intro button:hover {
     background-color: rgb(75 210 186);
-    transform: scale(1.05);
+    transform: scale(1);
+    animation: fadeIn 1s ease-in-out 0.25s forwards;
 }
 
 .goBack-btn {
@@ -130,8 +155,8 @@
     }
 
     .card {
-        width: 90%;
-        height: 400px;
+        width: 350px;
+        height: 500px;
     }
 }
 
@@ -140,8 +165,40 @@
         font-size: 30px;
     }
 
+    .goBack-btn:hover {
+        margin-top: 15px;
+        background-color: rgb(75 210 186);
+        transform: scale(1.05);
+    }
+
+    .cards {
+        margin: auto;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
     .card {
         width: 100%;
         height: auto;
     }
+
+    .card.expanded {
+        transition: all 0.5s ease-in-out; /* Transition fluide pour toutes les propriétés */
+        width: 100%;
+        min-height: 500px;
+        height: auto;
+        z-index: 10;
+        border-radius: 1;
+        padding: 0px;
+        opacity: 1; /* Complètement visible */
+        transform: scale(1); /* Échelle normale */
+      }
+
+    .card:not(.expanded) {
+        height: 500px;
+        width: 250px;
+        transition: all 0.5s ease-in-out; /* Applique la même transition que les cartes étendues */
+      }
 }
