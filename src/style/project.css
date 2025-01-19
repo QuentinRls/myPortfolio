@@ -191,14 +191,12 @@
         height: auto;
         z-index: 10;
         border-radius: 1;
-        padding: 0px;
         opacity: 1; /* Complètement visible */
         transform: scale(1); /* Échelle normale */
       }
 
     .card:not(.expanded) {
         height: 500px;
-        width: 250px;
         transition: all 0.5s ease-in-out; /* Applique la même transition que les cartes étendues */
       }
 }

@@ -1,7 +1,6 @@
 // Home.js
 import React, { useState, useEffect } from 'react';
 import ParticleEffectButton from 'react-particle-effect-button';
-import ReactTyped from "react-typed";
 import '../style/home.css';
 
 const PresentationText = () => {
@@ -17,18 +16,27 @@ const PresentationText = () => {
       setShowSecond(true);
     }, 3200);
   }, []);
+
   return (
     <h1 className="textProfil">
-      <ReactTyped strings={["`&#160`> Hi,"]} typeSpeed={50} showCursor={false} />
+      <span>&gt; Hi,</span>
       <br />
-      <ReactTyped strings={["`&#160`"]} typeSpeed={100} showCursor={false} />
-      {showFirst && <ReactTyped strings={["> I'm Quentin,"]} typeSpeed={45} showCursor={false} />}
+      <span>&gt; </span>
+      {showFirst && <span>I'm Quentin,</span>}
       <br />
-      <ReactTyped strings={["`&#160`"]} typeSpeed={80} showCursor={false} />
-      {showSecond && <ReactTyped strings={["> A React.js developer", "> A Rugbyman", "> A hard worker !"]} backSpeed={50} typeSpeed={80} loop cursorChar='_' />}
+      <span>&gt; </span>
+      {showSecond && (
+        <>
+          <span>A React.js developer</span>
+          <br />
+          <span>A Rugbyman</span>
+          <br />
+          <span>A hard worker!</span>
+        </>
+      )}
     </h1>
-  )
-}
+  );
+};
 
 const SectionsButton = () => {
   return (

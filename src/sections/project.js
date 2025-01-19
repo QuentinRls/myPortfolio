@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect, useCallback } from 'react';
 import boxShadowSetter from "../ressources/projectRessources";
 import LegalRAG from "../components/LegalRAG";
 import Test from "../components/Agent";
@@ -8,44 +8,41 @@ import legalImage from "../image/JuridiqueIA.webp";
 import promptImage from "../image/promptGen.webp";
 import cvImage from "../image/CVanalyzer.webp";
 
-
-const Card = ({ shadowStyles, content, imageSrc, isExpanded, isHidden, onReturn }) => {
-  return (
-    <div
-      className={`card ${isExpanded ? 'expanded' : ''} ${isHidden ? 'hidden' : ''}`}
-      style={isExpanded ? { boxShadow: shadowStyles, transition: 'all 0.5s ease-in-out', maxWidth: '80vw' } : { boxShadow: shadowStyles }}
-    >
-      {isExpanded && (
-        <button className="goBack-btn" onClick={onReturn}>
-          Retour
-        </button>
-      )}
-      {imageSrc && !isExpanded && <img src={imageSrc} alt="card visual" className="card-image" />}
-      {content(isExpanded)}
-    </div>
-  );
-};
+const Card = ({ shadowStyles, content, imageSrc, isExpanded, isHidden, onReturn }) => (
+  <div
+    className={`card ${isExpanded ? 'expanded' : ''} ${isHidden ? 'hidden' : ''}`}
+    style={isExpanded ? { boxShadow: shadowStyles, transition: 'all 0.5s ease-in-out', maxWidth: '80vw' } : { boxShadow: shadowStyles }}
+  >
+    {isExpanded && (
+      <button className="goBack-btn" onClick={onReturn}>
+        Retour
+      </button>
+    )}
+    {imageSrc && !isExpanded && <img src={imageSrc} alt="card visual" className="card-image" />}
+    {content(isExpanded)}
+  </div>
+);
 
 const Cards = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [expandedCard, setExpandedCard] = useState(null);
   const [cvResult, setCVResult] = useState(null);
 
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     setWindowWidth(window.innerWidth);
-  };
+  }, []);
 
-  const handleReturn = () => {
+  const handleReturn = useCallback(() => {
     if (cvResult) setCVResult(null);
     setExpandedCard(null);
-  };
+  }, [cvResult]);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
   const initialShadows = boxShadowSetter(windowWidth);
 
@@ -91,7 +88,7 @@ const Cards = () => {
           </div>
         )
       ),
-    }
+    },
   ];
 
   return (
@@ -111,15 +108,13 @@ const Cards = () => {
   );
 };
 
-const Project = () => {
-  return (
-    <section id='project' className="libContent">
-      <h1 className='textLib'>
-        <span style={{ color: 'aquamarine' }}>III. </span>Applications
-      </h1>
-      <Cards />
-    </section>
-  );
-};
+const Project = () => (
+  <section id='project' className="libContent">
+    <h1 className='textLib'>
+      <span style={{ color: 'aquamarine' }}>III. </span>Applications
+    </h1>
+    <Cards />
+  </section>
+);
 
 export default Project;

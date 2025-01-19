@@ -5,7 +5,7 @@ import Loader from "../styling/loader";
 function Test({ onClear }) {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const [loading, setLoading] = useState(false); // État pour le chargement
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = async (event) => {
     event.preventDefault();
@@ -15,7 +15,7 @@ function Test({ onClear }) {
       return;
     }
 
-    setLoading(true); // Démarrer le chargement
+    setLoading(true);
 
     try {
       const response = await fetch("https://mywebsiteserver-s92a.onrender.com/test-query", {
@@ -23,9 +23,7 @@ function Test({ onClear }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          question,
-        }),
+        body: JSON.stringify({ question }),
       });
 
       const data = await response.json();
@@ -40,7 +38,7 @@ function Test({ onClear }) {
 
   useEffect(() => {
     if (onClear) {
-      onClear(() => setAnswer("")); // Réinitialise le contenu lorsqu'onReturn est déclenché
+      onClear(() => setAnswer(""));
     }
   }, [onClear]);
 
@@ -73,7 +71,6 @@ function Test({ onClear }) {
     });
   };
 
-
   return (
     <div className="form-container">
       <h1>Générateur de prompt</h1>
@@ -90,7 +87,7 @@ function Test({ onClear }) {
           required
         />
         <button type="submit" className="analyze-btn" disabled={loading}>
-          {loading ? <Loader/> : "Rechercher"}
+          {loading ? <Loader /> : "Rechercher"}
         </button>
       </form>
       {answer && (
