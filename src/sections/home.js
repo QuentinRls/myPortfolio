@@ -22,18 +22,20 @@ const PresentationText = () => {
       <span>&gt; Hi,</span>
       <br />
       <span>&gt; </span>
-      {showFirst && <span>I'm Quentin,</span>}
+      <span>
+        I'm Quentin,
+      </span>
       <br />
       <span>&gt; </span>
-      {showSecond && (
-        <>
-          <span>A React.js developer</span>
-          <br />
-          <span>A Rugbyman</span>
-          <br />
-          <span>A hard worker!</span>
-        </>
-      )}
+      <>
+        A developer specialized in
+        <div class="dropping-texts">
+          <div>ReactJS</div>
+          <div>Designing</div>
+          <div>Team Work</div>
+          <div>IA !</div>
+        </div>
+      </>
     </h1>
   );
 };

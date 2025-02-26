@@ -15,7 +15,6 @@
 }
 
 .textProfil {
-  width: 55%;
   font-size: 42px;
   font-family: system-ui;
   text-align: left;
@@ -81,7 +80,127 @@
   transform: scale(0.90);
 }
 
+.dropping-texts {
+  font-size: 42px;
+  display: inline-block;
+  margin-left: 7px;
+  margin-bottom: 3px;
+  width: 180px;
+  text-align: left;
+  height: 42px;
+  vertical-align: -2px;
+}
+
+.dropping-texts > div {
+  font-size:0px;
+  opacity:0;
+  margin-left:-30px;
+  position:absolute;
+  font-weight:300;   
+}
+
+.dropping-texts > div:nth-child(1) {
+  animation: roll 5s linear infinite 0s;
+}
+.dropping-texts > div:nth-child(2) {
+  animation: roll 5s linear infinite 1s;
+}
+.dropping-texts > div:nth-child(3) {
+  animation: roll 5s linear infinite 2s;
+}
+.dropping-texts > div:nth-child(4) {
+  animation: roll2 5s linear infinite 3s;
+}
+
+@keyframes roll {
+  0% {
+    font-size:0px;
+    opacity:0;
+    margin-left:-30px;
+    margin-top:0px;
+    transform: rotate(-25deg);
+  }
+  3% {
+    opacity:1;
+    transform: rotate(0deg);
+  }
+  5% {
+    font-size:inherit;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+  }
+  20% {
+    font-size:inherit;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    transform: rotate(0deg);
+  }
+  27% {
+    font-size:0px;
+    opacity:0.5;
+    margin-left:20px;
+    margin-top:100px;
+  }
+  100% {
+    font-size:0px;
+    opacity:0;
+    margin-left:-30px;
+    margin-top:0px;
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes roll2 {
+  0% {
+    font-size:0px;
+    opacity:0;
+    margin-left:-30px;
+    margin-top:0px;
+    transform: rotate(-25deg);
+  }
+  3% {
+    opacity:1;
+    transform: rotate(0deg);
+  }
+  5% {
+    font-size:inherit;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+  }
+  30% {
+    font-size:inherit;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    transform: rotate(0deg);
+  }
+  37% {
+    opacity:0;
+  }
+  100% {
+    font-size:0px;
+    opacity:0;
+    margin-left:-30px;
+    margin-top:0px;
+    transform: rotate(15deg);
+  }
+} 
+
 @media screen and (max-width: 1080px) {
+  .dropping-texts {
+    font-size: 35px;
+    display: inline-block;
+    margin-left: 7px;
+    margin-bottom: 3px;
+    width: 180px;
+    text-align: left;
+    height: 35px;
+    vertical-align: -2px;
+  }
+
   .textProfil {
     width: 100%;
     font-size: 35px;
@@ -106,7 +225,20 @@
 }
 }
 
+
+
 @media screen and (max-width: 405px) {
+
+  .dropping-texts {
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 7px;
+    margin-bottom: 3px;
+    width: 180px;
+    text-align: left;
+    height: 25px;
+    vertical-align: -2px;
+  }
   .textProfil {
     width: 100%;
     font-size: 25px;
