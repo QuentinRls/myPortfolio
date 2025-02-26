@@ -4,18 +4,6 @@ import ParticleEffectButton from 'react-particle-effect-button';
 import '../style/home.css';
 
 const PresentationText = () => {
-  const [showFirst, setShowFirst] = useState(false);
-  const [showSecond, setShowSecond] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowFirst(true);
-    }, 1500);
-
-    setTimeout(() => {
-      setShowSecond(true);
-    }, 3200);
-  }, []);
 
   return (
     <h1 className="textProfil">
